@@ -10,4 +10,6 @@ handler.tags = ['absen']
 handler.command = /^(delete|hapus)absen$/i
 handler.group = true
 handler.admin = true
+handler.owner = true
+handler.premium = true
 module.exports = handler
