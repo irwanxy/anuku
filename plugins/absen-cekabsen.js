@@ -23,10 +23,11 @@ ${list}
 │ 
 └────
 
-_by Ariffb_`, m, { contextInfo: { mentionedJid: absen } })
+_by Deva Cans_`, m, { contextInfo: { mentionedJid: absen } })
 }
 handler.help = ['cekabsen']
 handler.tags = ['absen']
 handler.command = /^cekabsen$/i
 handler.group = true
+handler.owner = true
 module.exports = handler
