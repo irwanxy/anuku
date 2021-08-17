@@ -155,8 +155,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+    conn.reply(m.chat, text.trim(), m))
     let pp = await conn.getProfilePicture(conn.user.jid).catch(_ => path.join(__dirname, '../src/anu.png'))
-    conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m).catch(_ => conn.reply(m.chat, text.trim(), m))
+    conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m).catch(_ =>
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
