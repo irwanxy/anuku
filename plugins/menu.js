@@ -1,6 +1,7 @@
 let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
+let inputPath = 'src/anu.jpg'
 let tags = {
   'main': 'Main',
   'game': 'Game',
@@ -157,7 +158,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     conn.reply(m.chat, text.trim(), m)
     try {
-     await conn.sendFile(m.chat, pp, 'pp.jpg', text.trim(), m)
+     await conn.sendFile(m.chat, pp, 'anu.jpg', text.trim(), m)
     } catch (e) {
       try {
         await conn.reply(m.chat, text.trim(), m)
